@@ -49,7 +49,12 @@ function register() {
     .then(response => {
         if (response.ok) {
             console.log('Registration successful');
-            swal("Account Created !", "You can Now Login with your username & Password, Thanks For Registering", "success");
+            swal("Account Created !", "You can Now Login with your username & Password, Thanks For Registering", "success")
+            .then(() => {
+                // Redirect to the login page
+                window.location.href = "/login";
+              });
+
             // Optionally, you can auto-login the user after registration
             // Call the login() function with the registered credentials
         } else {
