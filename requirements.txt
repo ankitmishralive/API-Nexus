@@ -5,4 +5,5 @@ flask-limiter
 BeautifulSoup4
 requests
 Flask-Login
+tinydb
 gunicorn
