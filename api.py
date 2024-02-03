@@ -23,7 +23,7 @@ def api_limit_page(e):
 
 
 @api.route('/api/teams',methods=['GET'])
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def teams():
     api_key = request.args.get('api_key')
     user = db.get(Query().api_key == api_key)
@@ -53,7 +53,7 @@ def teams():
 
 
 @api.route('/api/teamvteam')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def teamvteam():
     api_key = request.args.get('api_key')
     user = db.get(Query().api_key == api_key)
@@ -87,7 +87,7 @@ def teamvteam():
 
 
 @api.route('/api/teamrecord')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def teamrecord():
     api_key = request.args.get('api_key')
     user = db.get(Query().api_key == api_key)
@@ -119,7 +119,7 @@ def teamrecord():
     return jsonify(response)
 
 @api.route('/api/batsmanrecord')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def batsmanrecord():
     api_key = request.args.get('api_key')
     user = db.get(Query().api_key == api_key)
@@ -150,7 +150,7 @@ def batsmanrecord():
     return jsonify(response)
 
 @api.route('/api/seasonwinner')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def seasonwinner():
     api_key = request.args.get('api_key')
     user = db.get(Query().api_key == api_key)
@@ -180,7 +180,7 @@ def seasonwinner():
     return jsonify(SeasonWinner)
 
 @api.route('/api/venues')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def venue():
      
     api_key = request.args.get('api_key')
@@ -210,7 +210,7 @@ def venue():
     return jsonify(venues)
 
 @api.route('/api/teamatvenue')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def teamvenue():
      
     api_key = request.args.get('api_key')
@@ -242,7 +242,7 @@ def teamvenue():
     return jsonify(teamatvenue)
 
 @api.route('/api/batsmanruns')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def batsmanruns():
 
     api_key = request.args.get('api_key')
@@ -272,7 +272,7 @@ def batsmanruns():
     return jsonify(batsman)
 
 @api.route('/api/noofsix')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def noofsix():
 
     api_key = request.args.get('api_key')
@@ -302,7 +302,7 @@ def noofsix():
     return jsonify(noofsix)
 
 @api.route('/api/powerhitters')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def powerhittersoflast5overs():
 
     api_key = request.args.get('api_key')
@@ -332,7 +332,7 @@ def powerhittersoflast5overs():
     return jsonify(powerhitter)
 
 @api.route('/api/batsman-runs-against-all-teams')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def batsmanvsall():
 
     api_key = request.args.get('api_key')
@@ -372,7 +372,7 @@ def batsmanvsall():
 
 
 @api.route('/api/')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def get_news():
     api_key = request.args.get('api_key')
     user = db.get(Query().api_key == api_key)
@@ -424,7 +424,7 @@ def get_news():
 
 
 @api.route('/api/news/')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def get_region_news():
     api_key = request.args.get('api_key')
     user = db.get(Query().api_key == api_key)
@@ -471,7 +471,7 @@ def get_region_news():
 
 
 @api.route('/api/news/sports/')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def get_sports_news():
 
     api_key = request.args.get('api_key')
@@ -511,7 +511,7 @@ def get_sports_news():
         return jsonify(response)
 
 @api.route('/api/news/entertainment/')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def get_entertainment_news():
 
     api_key = request.args.get('api_key')
@@ -552,7 +552,7 @@ def get_entertainment_news():
 
 
 @api.route('/api/news/financial-assets/')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def financialAssets():
     select = request.args.get('asset')
     api_key = request.args.get('api_key')
@@ -603,7 +603,7 @@ def financialAssets():
 
 
 @api.route('/api/news/world/')
-@limiter.limit("10 per hour;99 per day")
+@limiter.limit("3 per hour;72 per day")
 def world():
 
     api_key = request.args.get('api_key')
