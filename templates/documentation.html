@@ -9,7 +9,6 @@
 </head>
 
 <body class="bg-gray-100">
-
     <header class="fixed inset-x-0 top-0 z-50 bg-white w-full">
         <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
@@ -20,7 +19,7 @@
             </div>
             <div class="flex lg:hidden">
                 <button type="button"
-                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700" id="menu-button" >
                     <span class="sr-only">Open main menu</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                         aria-hidden="true">
@@ -29,8 +28,10 @@
                 </button>
             </div>
             <div class="hidden lg:flex lg:gap-x-12">
-                <a href="/documentation" class="text-sm font-semibold leading-6 text-gray-900">IPL API Documentation</a>
-                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">About us</a>
+                <a href="/ipl-api-documentation" class="text-sm font-semibold leading-6 text-gray-900">IPL API Documentation</a>
+        <a href="/news-api-documentation" class="text-sm font-semibold leading-6 text-gray-900">News API Documentation</a>
+        <a href="/login" class="text-sm font-semibold leading-6 text-gray-900">Login</a>
+        <a href="/registerpage" class="text-sm font-semibold leading-6 text-gray-900">Register</a>
             </div>
             <div class="hidden lg:flex lg:flex-1 lg:justify-end">
                 <a href="/documentation"
@@ -39,16 +40,15 @@
             </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
-        <div class="mobile-menu lg:hidden" role="dialog" aria-modal="true">
+        <div class="mobile-menu lg:hidden hidden" role="dialog" aria-modal="true">
             <!-- Background backdrop, show/hide based on slide-over state. -->
             <div class="fixed inset-0 z-50"></div>
             <div
                 class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                 <div class="flex items-center justify-between">
-                    <a href="#" class="-m-1.5 p-1.5">
-                        <span class="sr-only">Your Company</span>
-                        <img class="h-8 w-auto"
-                            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+                    <a href="/" class="-m-1.5 p-1.5">
+                        <span class="sr-only">API-Nexus</span>
+                     
                     </a>
 
                     <button type="button" id='menu-button'
@@ -60,25 +60,20 @@
                         </svg>
                     </button>
                 </div>
+
                 <div class="mt-6 flow-root">
                     <div class="-my-6 divide-y divide-gray-500/10">
-                        <div class="space-y-2 py-6">
-                            <a href="#"
-                                class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>
-                            <a href="#"
-                                class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
-                            <a href="#"
-                                class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
-                            <a href="#"
-                                class="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
-                        </div>
-                        <div class="py-6">
-                            <a href="#"
-                                class="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log
-                                in</a>
-                        </div>
+                      <div class="space-y-2 py-6">
+                        <a href="/documentation" class="text-sm font-semibold leading-6 text-gray-900 block">Documentation</a>
+                        <a href="/ipl-api-documentation" class="text-sm font-semibold leading-6 text-gray-900 block">IPL API Documentation</a>
+                        <a href="/news-api-documentation" class="text-sm font-semibold leading-6 text-gray-900 block">News API Documentation</a>
+                        <a href="/login" class="text-sm font-semibold leading-6 text-gray-900 block">Login</a>
+                        <a href="/registerpage" class="text-sm font-semibold leading-6 text-gray-900 block">Register</a>
+                      </div>
                     </div>
-                </div>
+                  </div>
+
+
             </div>
         </div>
     </header>
@@ -193,14 +188,25 @@
     </section>
 
     <script>
-        
 
-        // Toggle mobile menu
-        document.getElementById('menu-button').addEventListener('click', function () {
-            document.querySelector('.mobile-menu').classList.toggle('hidden');
-            document.querySelector('body').classList.toggle('overflow-hidden');
-        });
-    </script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const mobileMenuButton = document.querySelector(".mobile-menu-button");
+            const mobileMenu = document.querySelector(".mobile-menu");
+          
+            // Function to toggle the mobile menu
+            function toggleMobileMenu() {
+              mobileMenu.classList.toggle("hidden");
+            }
+          
+            // Event listener for the mobile menu button click
+            mobileMenuButton.addEventListener("click", toggleMobileMenu);
+          
+            // Event listener for the close menu button inside the mobile menu
+            const closeButton = document.getElementById("menu-button");
+            closeButton.addEventListener("click", toggleMobileMenu);
+          });
+          
+      </script>
 
 </body>
 
