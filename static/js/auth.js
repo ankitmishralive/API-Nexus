@@ -34,7 +34,7 @@ function login() {
 function register() {
     const regUsername = document.getElementById('regUsername').value;
     const regPassword = document.getElementById('regPassword').value;
-    const regFullname = document.getElementById('regFullname').value;
+    const regFullname = document.getElementById('regFullName').value;
     const regEmail = document.getElementById('regEmail').value;
 
     // Make a POST request to your Flask register endpoint with username and password
