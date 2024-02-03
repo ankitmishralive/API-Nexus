@@ -4,3 +4,4 @@ pandas
 flask-limiter
 BeautifulSoup4
 requests
+gunicorn
