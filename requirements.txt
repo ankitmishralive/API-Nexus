@@ -2,4 +2,5 @@
 flask 
 pandas
 flask-limiter
-BeautifulSoup
+BeautifulSoup4
+requests
