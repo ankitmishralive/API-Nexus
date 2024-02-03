@@ -122,7 +122,8 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return jsonify({'message': 'Logout successful'}), 200
+    return redirect('/login')
+    # return jsonify({'message': 'Logout successful'}), 200
 
 
 @login_manager.unauthorized_handler

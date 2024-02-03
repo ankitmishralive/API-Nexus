@@ -49,14 +49,17 @@ function register() {
     .then(response => {
         if (response.ok) {
             console.log('Registration successful');
+            swal("Account Created !", "You can Now Login with your username & Password, Thanks For Registering", "success");
             // Optionally, you can auto-login the user after registration
             // Call the login() function with the registered credentials
         } else {
             // Handle registration error
-            console.error('Registration failed');
+
+            swal("Registeration Failed", "Fill all the Details", "error");
         }
     })
     .catch(error => {
         console.error('Error during registration:', error);
+        swal("Contact us", "ankitmishra.letter@gmail.com", "error");
     });
 }
