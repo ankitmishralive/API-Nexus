@@ -1,0 +1,6 @@
+
+flask 
+pandas
+flask-limiter
+BeautifulSoup
+requests
