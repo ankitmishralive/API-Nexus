@@ -4,4 +4,5 @@ pandas
 flask-limiter
 BeautifulSoup4
 requests
+Flask-Login
 gunicorn
